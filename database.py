@@ -1,0 +1,97 @@
+import sqlite3
+from typing import Dict, Any, Optional
+from datetime import datetime
+
+class Database:
+    """Manages SQLite database operations for tracking product status and prices."""
+
+    def __init__(self, db_path: str = "tracker.db") -> None:
+        """Initializes the database connection and creates tables if they don't exist.
+
+        Args:
+            db_path: Path to the SQLite database file.
+        """
+        self.db_path = db_path
+        self._init_db()
+
+    def _init_db(self) -> None:
+        """Creates the product_states table if it doesn't already exist."""
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                """
+                CREATE TABLE IF NOT EXISTS product_states (
+                    url TEXT PRIMARY KEY,
+                    name TEXT NOT NULL,
+                    site TEXT NOT NULL,
+                    last_status TEXT,
+                    last_price REAL,
+                    last_notified_at TEXT
+                )
+                """
+            )
+            conn.commit()
+
+    def get_product_state(self, url: str) -> Optional[Dict[str, Any]]:
+        """Retrieves the last stored state for a product URL.
+
+        Args:
+            url: The product URL.
+
+        Returns:
+            A dictionary containing product state if found, else None.
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            cursor.execute(
+                "SELECT * FROM product_states WHERE url = ?", (url,)
+            )
+            row = cursor.fetchone()
+            if row:
+                return dict(row)
+        return None
+
+    def update_product_state(
+        self,
+        url: str,
+        name: str,
+        site: str,
+        status: str,
+        price: Optional[float],
+        last_notified_at: Optional[str] = None
+    ) -> None:
+        """Updates or inserts the product state in the database.
+
+        Args:
+            url: The product URL.
+            name: The product name.
+            site: The site name (amazon or flipkart).
+            status: The current availability status.
+            price: The current price (optional).
+            last_notified_at: ISO formatted timestamp of the last sent notification.
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            
+            # Fetch existing last_notified_at if not provided, to avoid overwriting it with None
+            if last_notified_at is None:
+                cursor.execute("SELECT last_notified_at FROM product_states WHERE url = ?", (url,))
+                row = cursor.fetchone()
+                if row:
+                    last_notified_at = row[0]
+
+            cursor.execute(
+                """
+                INSERT INTO product_states (url, name, site, last_status, last_price, last_notified_at)
+                VALUES (?, ?, ?, ?, ?, ?)
+                ON CONFLICT(url) DO UPDATE SET
+                    name=excluded.name,
+                    site=excluded.site,
+                    last_status=excluded.last_status,
+                    last_price=excluded.last_price,
+                    last_notified_at=excluded.last_notified_at
+                """,
+                (url, name, site, status, price, last_notified_at)
+            )
+            conn.commit()

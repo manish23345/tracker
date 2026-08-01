@@ -1,0 +1,19 @@
+{
+  "telegram_bot_token": "8679738412:AAHsPC9tubHtbcVp0jKdBLc5siXvcj5c5is",
+  "telegram_chat_id": "8630178360",
+  "check_interval": 60,
+  "enable_price_alerts": true,
+  "price_drop_threshold_percent": 1.0,
+  "products": [
+    {
+      "name": "Organic Synthesis Chemistry Book",
+      "url": "https://www.amazon.in/dp/939316813X",
+      "site": "amazon"
+    },
+    {
+      "name": "SanDisk Cruzer Blade 32GB Pen Drive",
+      "url": "https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc",
+      "site": "flipkart"
+    }
+  ]
+}

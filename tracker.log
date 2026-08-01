@@ -1,0 +1,105 @@
+[2026-08-01 20:17:41] [ERROR] Page not found (404) for URL: https://www.amazon.in/dp/B0D1YG1PBL
+[2026-08-01 20:17:43] [WARNING] HTTP 403 on attempt 1 for URL: https://www.flipkart.com/apple-iphone-15-pro-black-titanium-128-gb/p/itm5edaa9ab5b40d
+[2026-08-01 20:17:43] [INFO] Retrying in 2.38 seconds...
+[2026-08-01 20:17:46] [WARNING] HTTP 403 on attempt 2 for URL: https://www.flipkart.com/apple-iphone-15-pro-black-titanium-128-gb/p/itm5edaa9ab5b40d
+[2026-08-01 20:17:46] [INFO] Retrying in 4.50 seconds...
+[2026-08-01 20:17:51] [WARNING] HTTP 403 on attempt 3 for URL: https://www.flipkart.com/apple-iphone-15-pro-black-titanium-128-gb/p/itm5edaa9ab5b40d
+[2026-08-01 20:17:51] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-01 20:17:51] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 20:17:56] [ERROR] Playwright rendering failed: BrowserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1234\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+[2026-08-01 20:19:03] [ERROR] Page not found (404) for URL: https://www.amazon.in/dp/B0D1YG1PBL
+[2026-08-01 20:19:13] [ERROR] Page not found (404) for URL: https://www.amazon.in/dp/B007V9976Q
+[2026-08-01 20:19:13] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 20:19:14] [INFO] Navigating to https://www.amazon.in/dp/B007V9976Q via Playwright...
+[2026-08-01 20:19:22] [WARNING] HTTP 403 on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:19:22] [INFO] Retrying in 2.69 seconds...
+[2026-08-01 20:19:25] [WARNING] HTTP 403 on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:19:25] [INFO] Retrying in 4.19 seconds...
+[2026-08-01 20:19:30] [WARNING] HTTP 403 on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:19:30] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 20:19:31] [INFO] Navigating to https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc via Playwright...
+[2026-08-01 20:21:36] [ERROR] Page not found (404) for URL: https://www.amazon.in/dp/B082D98DCE
+[2026-08-01 20:25:36] [WARNING] HTTP 403 on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:25:36] [INFO] Retrying in 2.46 seconds...
+[2026-08-01 20:25:40] [WARNING] HTTP 403 on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:25:40] [INFO] Retrying in 4.93 seconds...
+[2026-08-01 20:25:46] [WARNING] HTTP 403 on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:25:46] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-01 20:25:46] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 20:25:47] [INFO] Using Flipkart search-navigation bypass for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:25:57] [INFO] Found product search results. Simulating click...
+[2026-08-01 20:30:21] [WARNING] Telegram is NOT configured. Alerts will only print to console.
+Update 'telegram_bot_token' and 'telegram_chat_id' in config.json to enable Telegram alerts.
+[2026-08-01 20:30:21] [INFO] Verifying Playwright browser installation...
+[2026-08-01 20:30:22] [INFO] Playwright browser verified successfully.
+[2026-08-01 20:30:22] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-01 20:30:22] [INFO] Check interval: 60 seconds.
+[2026-08-01 20:30:25] [ERROR] Error checking product Organic Synthesis Chemistry Book (amazon): 'charmap' codec can't encode character '\u20b9' in position 2: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\manis\Downloads\kcet predictor 2026\tracker\tracker.py", line 59, in run
+    self._check_product(product, progress_prefix)
+  File "C:\Users\manis\Downloads\kcet predictor 2026\tracker\tracker.py", line 120, in _check_product
+    sys.stdout.write(f" (₹{price:,.2f})")
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 47, in write
+    self.__convertor.write(text)
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 177, in write
+    self.write_and_convert(text)
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 205, in write_and_convert
+    self.write_plain_text(text, cursor, len(text))
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 210, in write_plain_text
+    self.wrapped.write(text[start:end])
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 47, in write
+    self.__convertor.write(text)
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 177, in write
+    self.write_and_convert(text)
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 205, in write_and_convert
+    self.write_plain_text(text, cursor, len(text))
+  File "C:\Users\manis\AppData\Roaming\Python\Python312\site-packages\colorama\ansitowin32.py", line 210, in write_plain_text
+    self.wrapped.write(text[start:end])
+  File "C:\Program Files\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u20b9' in position 2: character maps to <undefined>
+[2026-08-01 20:30:31] [WARNING] HTTP 403 on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:30:31] [INFO] Retrying in 2.98 seconds...
+[2026-08-01 20:30:35] [WARNING] HTTP 403 on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:30:35] [INFO] Retrying in 4.92 seconds...
+[2026-08-01 20:30:40] [WARNING] HTTP 403 on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:30:40] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-01 20:30:40] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 20:30:41] [INFO] Using Flipkart search-navigation bypass for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:30:51] [INFO] Found product search results. Simulating click...
+[2026-08-01 20:30:59] [INFO] Single scan run completed. Exiting.
+[2026-08-01 20:31:10] [WARNING] Telegram is NOT configured. Alerts will only print to console.
+Update 'telegram_bot_token' and 'telegram_chat_id' in config.json to enable Telegram alerts.
+[2026-08-01 20:31:10] [INFO] Verifying Playwright browser installation...
+[2026-08-01 20:31:11] [INFO] Playwright browser verified successfully.
+[2026-08-01 20:31:11] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-01 20:31:11] [INFO] Check interval: 60 seconds.
+[2026-08-01 20:31:14] [INFO] Alert Trigger: 'Organic Synthesis (Reaction Mechanisms and Reagents)' is BACK IN STOCK!
+[2026-08-01 20:31:14] [WARNING] Telegram Bot Token or Chat ID is not configured. Skipping notification.
+[2026-08-01 20:31:19] [WARNING] HTTP 403 on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:31:19] [INFO] Retrying in 2.37 seconds...
+[2026-08-01 20:31:28] [WARNING] HTTP 403 on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:31:28] [INFO] Retrying in 4.96 seconds...
+[2026-08-01 20:31:33] [WARNING] HTTP 403 on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:31:33] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-01 20:31:33] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 20:31:34] [INFO] Using Flipkart search-navigation bypass for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 20:31:44] [INFO] Found product search results. Simulating click...
+[2026-08-01 20:31:50] [INFO] Single scan run completed. Exiting.
+[2026-08-01 20:40:35] [INFO] Verifying Playwright browser installation...
+[2026-08-01 20:40:36] [INFO] Playwright browser verified successfully.
+[2026-08-01 20:40:36] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-01 20:40:36] [INFO] Check interval: 60 seconds.
+[2026-08-01 20:40:39] [INFO] Alert Trigger: 'Organic Synthesis (Reaction Mechanisms and Reagents)' is BACK IN STOCK!
+[2026-08-01 20:40:40] [SUCCESS] Telegram notification sent successfully for 'Organic Synthesis (Reaction Mechanisms and Reagents)'
+[2026-08-01 20:40:44] [INFO] Single scan run completed. Exiting.
