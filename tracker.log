@@ -103,3 +103,26 @@ Update 'telegram_bot_token' and 'telegram_chat_id' in config.json to enable Tele
 [2026-08-01 20:40:39] [INFO] Alert Trigger: 'Organic Synthesis (Reaction Mechanisms and Reagents)' is BACK IN STOCK!
 [2026-08-01 20:40:40] [SUCCESS] Telegram notification sent successfully for 'Organic Synthesis (Reaction Mechanisms and Reagents)'
 [2026-08-01 20:40:44] [INFO] Single scan run completed. Exiting.
+[2026-08-01 15:45:22] [INFO] Verifying Playwright browser installation...
+[2026-08-01 15:45:23] [INFO] Playwright browser verified successfully.
+[2026-08-01 15:45:23] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-01 15:45:23] [INFO] Check interval: 60 seconds.
+[2026-08-01 15:45:23] [WARNING] Amazon requests block detected (CAPTCHA/robot check) on attempt 1.
+[2026-08-01 15:45:26] [WARNING] Amazon requests block detected (CAPTCHA/robot check) on attempt 2.
+[2026-08-01 15:45:31] [WARNING] Amazon requests block detected (CAPTCHA/robot check) on attempt 3.
+[2026-08-01 15:45:31] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-01 15:45:31] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 15:45:31] [INFO] Navigating to https://www.amazon.in/dp/939316813X directly via Playwright...
+[2026-08-01 15:45:51] [WARNING] Request exception on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Max retries exceeded with url: /sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.flipkart.com', port=443) at 0x7f0b9172c490>, 'Connection to www.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-01 15:45:51] [INFO] Retrying in 2.85 seconds...
+[2026-08-01 15:46:09] [WARNING] Request exception on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Max retries exceeded with url: /sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.flipkart.com', port=443) at 0x7f0b91734e90>, 'Connection to www.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-01 15:46:09] [INFO] Retrying in 4.37 seconds...
+[2026-08-01 15:46:28] [WARNING] Request exception on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Max retries exceeded with url: /sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.flipkart.com', port=443) at 0x7f0b917a0990>, 'Connection to www.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-01 15:46:28] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-01 15:46:28] [INFO] Initializing Playwright fallback scraper...
+[2026-08-01 15:46:29] [INFO] Using Flipkart search-navigation bypass for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-01 15:47:14] [ERROR] Playwright rendering failed: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
+
+[2026-08-01 15:47:14] [INFO] Single scan run completed. Exiting.
