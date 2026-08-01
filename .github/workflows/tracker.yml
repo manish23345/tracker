@@ -47,10 +47,21 @@ jobs:
 
     - name: Commit State & Logs
       run: |
+        # Sanitize config.json before committing to keep secrets safe
+        python -c "
+        import json
+        with open('config.json', 'r') as f:
+            cfg = json.load(f)
+        cfg['telegram_bot_token'] = 'YOUR_BOT_TOKEN'
+        cfg['telegram_chat_id'] = 'YOUR_CHAT_ID'
+        with open('config.json', 'w') as f:
+            json.dump(cfg, f, indent=2)
+        "
+        
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "actions@github.com"
         
-        git add tracker.db history.log tracker.log || true
+        git add config.json tracker.db history.log tracker.log || true
         
         if ! git diff --cached --quiet; then
           git commit -m "chore: update tracking database and logs [skip ci]"
