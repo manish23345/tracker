@@ -39,6 +39,9 @@ class ProductTracker:
         logger.info(f"Check interval: {self.check_interval} seconds.")
         
         while True:
+            # Poll Telegram Bot for any dynamically added products
+            self._check_telegram_additions()
+
             start_time = datetime.now()
             next_scan_time = start_time + timedelta(seconds=self.check_interval)
             
@@ -225,3 +228,118 @@ class ProductTracker:
         except KeyboardInterrupt:
             print(f"\n{Fore.RED}Tracker stopped by user.")
             sys.exit(0)
+
+    def _check_telegram_additions(self) -> None:
+        """Polls Telegram Bot API for new product links sent by the user, and updates config.json dynamically."""
+        if not self.bot_token or not self.chat_id:
+            return
+
+        last_update_id_str = self.db.get_metadata("last_telegram_update_id", "-1")
+        last_update_id = int(last_update_id_str)
+
+        api_url = f"https://api.telegram.org/bot{self.bot_token}/getUpdates"
+        params = {"offset": last_update_id + 1, "timeout": 0}
+
+        try:
+            import requests
+            import json
+            response = requests.get(api_url, params=params, timeout=10)
+            if response.status_code != 200:
+                return
+
+            res_json = response.json()
+            if not res_json.get("ok"):
+                return
+
+            updates = res_json.get("result", [])
+            if not updates:
+                return
+
+            config_updated = False
+            
+            for update in updates:
+                update_id = update.get("update_id")
+                # Update the ID immediately so we don't process it again if parsing errors out
+                if update_id > last_update_id:
+                    last_update_id = update_id
+                    self.db.set_metadata("last_telegram_update_id", str(last_update_id))
+
+                message = update.get("message", {})
+                chat = message.get("chat", {})
+                sender_chat_id = str(chat.get("id", ""))
+                
+                # SECURITY: Only accept commands/links from the configured Chat ID!
+                if sender_chat_id != str(self.chat_id):
+                    continue
+
+                text = message.get("text", "").strip()
+                if not text:
+                    continue
+
+                # Look for links in the message text
+                url_match = None
+                for word in text.split():
+                    if ("amazon.in/" in word or "flipkart.com/" in word) and word.startswith("http"):
+                        url_match = word
+                        break
+                
+                if url_match:
+                    # Clean/normalize URL (remove tracking/query params)
+                    url = url_match.split("?")[0]
+                    site = "amazon" if "amazon" in url else "flipkart"
+                    
+                    # Check if already tracking
+                    already_tracking = any(p.get("url") == url for p in self.products)
+                    if already_tracking:
+                        # Send confirmation reply
+                        TelegramBot.send_notification(
+                            token=self.bot_token,
+                            chat_id=self.chat_id,
+                            product_name="Product Link",
+                            status="Already being monitored!",
+                            price=None,
+                            site_name=site.capitalize(),
+                            url=url,
+                            time_str=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            alert_type="reminder"
+                        )
+                        continue
+
+                    # Create new product entry
+                    new_product = {
+                        "name": "Added via Telegram",
+                        "url": url,
+                        "site": site
+                    }
+                    
+                    self.products.append(new_product)
+                    config_updated = True
+                    
+                    logger.info(f"Dynamically added product from Telegram: {url}")
+                    
+                    # Send confirmation reply
+                    TelegramBot.send_notification(
+                        token=self.bot_token,
+                        chat_id=self.chat_id,
+                        product_name="New product added successfully!",
+                        status="Now Tracking...",
+                        price=None,
+                        site_name=site.capitalize(),
+                        url=url,
+                        time_str=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        alert_type="stock"
+                    )
+
+            if config_updated:
+                # Save updated list back to config.json
+                self.config["products"] = self.products
+                try:
+                    with open("config.json", "w", encoding="utf-8") as f:
+                        json.dump(self.config, f, indent=2)
+                    logger.info("Saved updated config.json with new Telegram-added products.")
+                except Exception as save_err:
+                    logger.error(f"Failed to save config.json: {save_err}")
+
+        except Exception as e:
+            logger.error(f"Error checking Telegram bot commands: {e}")
+

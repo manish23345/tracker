@@ -15,7 +15,7 @@ class Database:
         self._init_db()
 
     def _init_db(self) -> None:
-        """Creates the product_states table if it doesn't already exist."""
+        """Creates tables if they don't already exist."""
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute(
@@ -27,6 +27,14 @@ class Database:
                     last_status TEXT,
                     last_price REAL,
                     last_notified_at TEXT
+                )
+                """
+            )
+            cursor.execute(
+                """
+                CREATE TABLE IF NOT EXISTS app_metadata (
+                    key TEXT PRIMARY KEY,
+                    value TEXT
                 )
                 """
             )
@@ -95,3 +103,41 @@ class Database:
                 (url, name, site, status, price, last_notified_at)
             )
             conn.commit()
+
+    def get_metadata(self, key: str, default_value: Optional[str] = None) -> Optional[str]:
+        """Retrieves a metadata value by key.
+
+        Args:
+            key: Metadata key.
+            default_value: Value to return if key is not found.
+
+        Returns:
+            The stored value or the default value.
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT value FROM app_metadata WHERE key = ?", (key,))
+            row = cursor.fetchone()
+            if row:
+                return row[0]
+        return default_value
+
+    def set_metadata(self, key: str, value: str) -> None:
+        """Saves a metadata key-value pair.
+
+        Args:
+            key: Metadata key.
+            value: Metadata value to store.
+        """
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                """
+                INSERT INTO app_metadata (key, value)
+                VALUES (?, ?)
+                ON CONFLICT(key) DO UPDATE SET value=excluded.value
+                """,
+                (key, value)
+            )
+            conn.commit()
+
