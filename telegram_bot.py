@@ -42,6 +42,9 @@ class TelegramBot:
         if alert_type == "price_drop":
             title = "📉 PRICE DROP ALERT!"
             status_indicator = f"💰 Price Reduced"
+        elif alert_type == "reminder":
+            title = "🔔 STOCK REMINDER!"
+            status_indicator = f"✅ {status}"
         else:
             title = "🚨 STOCK ALERT!"
             status_indicator = f"✅ {status}"

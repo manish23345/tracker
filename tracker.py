@@ -29,6 +29,7 @@ class ProductTracker:
         self.check_interval = config.get("check_interval", 60)
         self.enable_price_alerts = config.get("enable_price_alerts", True)
         self.price_drop_threshold = config.get("price_drop_threshold_percent", 1.0)
+        self.enable_in_stock_reminders = config.get("enable_in_stock_reminders", True)
         self.products: List[Dict[str, str]] = config.get("products", [])
         self.run_once = run_once
 
@@ -128,28 +129,44 @@ class ProductTracker:
         current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         notify_triggered = False
 
-        # Rule: Out of stock/unavailable/coming soon -> In stock transition
+        # Rule: Out of stock/unavailable/coming soon -> In stock transition OR reminder while in stock
         is_now_in_stock = status == "In Stock"
         was_previously_out = prev_status in [None, "Out of Stock", "Currently Unavailable", "Coming Soon"]
         
-        if is_now_in_stock and was_previously_out:
-            logger.info(f"Alert Trigger: '{display_name}' is BACK IN STOCK!")
-            sent = TelegramBot.send_notification(
-                token=self.bot_token,
-                chat_id=self.chat_id,
-                product_name=display_name,
-                status="Back in Stock",
-                price=price,
-                site_name=site.capitalize(),
-                url=url,
-                time_str=current_time_str,
-                alert_type="stock"
-            )
-            if sent:
-                notify_triggered = True
+        if is_now_in_stock:
+            if was_previously_out:
+                logger.info(f"Alert Trigger: '{display_name}' is BACK IN STOCK!")
+                sent = TelegramBot.send_notification(
+                    token=self.bot_token,
+                    chat_id=self.chat_id,
+                    product_name=display_name,
+                    status="Back in Stock",
+                    price=price,
+                    site_name=site.capitalize(),
+                    url=url,
+                    time_str=current_time_str,
+                    alert_type="stock"
+                )
+                if sent:
+                    notify_triggered = True
+            elif self.enable_in_stock_reminders:
+                logger.info(f"Alert Trigger: '{display_name}' is STILL IN STOCK (Reminder Alert)!")
+                sent = TelegramBot.send_notification(
+                    token=self.bot_token,
+                    chat_id=self.chat_id,
+                    product_name=display_name,
+                    status="Still in Stock (Reminder)",
+                    price=price,
+                    site_name=site.capitalize(),
+                    url=url,
+                    time_str=current_time_str,
+                    alert_type="reminder"
+                )
+                if sent:
+                    notify_triggered = True
 
-        # Rule: Price drop detection
-        elif is_now_in_stock and prev_status == "In Stock" and self.enable_price_alerts:
+        # Rule: Price drop detection (only evaluated if no reminder was sent, to avoid double notifications)
+        if is_now_in_stock and prev_status == "In Stock" and not notify_triggered and self.enable_price_alerts:
             if price is not None and prev_price is not None and price < prev_price:
                 price_drop_pct = ((prev_price - price) / prev_price) * 100
                 if price_drop_pct >= self.price_drop_threshold:

@@ -4,6 +4,7 @@
   "check_interval": 60,
   "enable_price_alerts": true,
   "price_drop_threshold_percent": 1.0,
+  "enable_in_stock_reminders": true,
   "products": [
     {
       "name": "Organic Synthesis Chemistry Book",
