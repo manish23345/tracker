@@ -1,0 +1,60 @@
+name: Periodic Stock Tracker
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Allows manual trigger from the GitHub Actions tab
+
+jobs:
+  run-tracker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+        playwright install --with-deps chromium
+
+    - name: Inject Telegram Secrets
+      env:
+        BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        python -c "
+        import json
+        with open('config.json', 'r') as f:
+            cfg = json.load(f)
+        cfg['telegram_bot_token'] = '$BOT_TOKEN'
+        cfg['telegram_chat_id'] = '$CHAT_ID'
+        with open('config.json', 'w') as f:
+            json.dump(cfg, f, indent=2)
+        "
+
+    - name: Run Stock Tracker Once
+      run: python main.py --once
+
+    - name: Commit State & Logs
+      run: |
+        git config --global user.name "GitHub Action Bot"
+        git config --global user.email "actions@github.com"
+        
+        git add tracker.db history.log tracker.log || true
+        
+        if ! git diff --cached --quiet; then
+          git commit -m "chore: update tracking database and logs [skip ci]"
+          git push
+        else
+          echo "No state changes detected. Skipping push."
+        fi
