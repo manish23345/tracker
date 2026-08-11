@@ -4239,3 +4239,32 @@ Call log:
   - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
 
 [2026-08-11 14:53:48] [INFO] Single scan run completed. Exiting.
+[2026-08-11 15:50:26] [INFO] Verifying Playwright browser installation...
+[2026-08-11 15:50:27] [INFO] Playwright browser verified successfully.
+[2026-08-11 15:50:27] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-11 15:50:27] [INFO] Check interval: 60 seconds.
+[2026-08-11 15:50:43] [WARNING] Request exception on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Max retries exceeded with url: /sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.flipkart.com', port=443) at 0x7feea4d16cd0>, 'Connection to www.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-11 15:50:43] [INFO] Retrying in 2.40 seconds...
+[2026-08-11 15:51:00] [WARNING] Request exception on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Max retries exceeded with url: /sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.flipkart.com', port=443) at 0x7feea4d29090>, 'Connection to www.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-11 15:51:00] [INFO] Retrying in 4.16 seconds...
+[2026-08-11 15:51:19] [WARNING] Request exception on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Max retries exceeded with url: /sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.flipkart.com', port=443) at 0x7feea4d2ba10>, 'Connection to www.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-11 15:51:19] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-11 15:51:19] [INFO] Initializing Playwright fallback scraper...
+[2026-08-11 15:51:20] [INFO] Using Flipkart search-navigation bypass for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-11 15:52:05] [ERROR] Playwright rendering failed: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
+
+[2026-08-11 15:52:22] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7feea4d42610>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-11 15:52:22] [INFO] Retrying in 2.50 seconds...
+[2026-08-11 15:52:39] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7feea4d4d410>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-11 15:52:39] [INFO] Retrying in 4.34 seconds...
+[2026-08-11 15:52:59] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7feea4d4c510>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-11 15:52:59] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-11 15:52:59] [INFO] Initializing Playwright fallback scraper...
+[2026-08-11 15:52:59] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-08-11 15:53:44] [ERROR] Playwright rendering failed: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
+
+[2026-08-11 15:53:44] [INFO] Single scan run completed. Exiting.
