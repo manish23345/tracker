@@ -10701,3 +10701,20 @@ Call log:
   - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
 
 [2026-08-20 20:56:50] [INFO] Single scan run completed. Exiting.
+[2026-08-20 21:18:48] [INFO] Verifying Playwright browser installation...
+[2026-08-20 21:18:50] [INFO] Playwright browser verified successfully.
+[2026-08-20 21:18:50] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-20 21:18:50] [INFO] Check interval: 60 seconds.
+[2026-08-20 21:19:10] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-20 21:19:10] [INFO] Retrying in 2.47 seconds...
+[2026-08-20 21:19:28] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-20 21:19:28] [INFO] Retrying in 4.16 seconds...
+[2026-08-20 21:19:47] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-20 21:19:47] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-20 21:19:47] [INFO] Initializing Playwright fallback scraper...
+[2026-08-20 21:19:48] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-08-20 21:20:33] [ERROR] Playwright rendering failed: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
+
+[2026-08-20 21:20:33] [INFO] Single scan run completed. Exiting.
