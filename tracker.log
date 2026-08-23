@@ -13241,3 +13241,20 @@ Call log:
 [2026-08-23 18:17:36] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
 [2026-08-23 18:17:46] [INFO] Found product search results. Simulating click...
 [2026-08-23 18:17:53] [INFO] Single scan run completed. Exiting.
+[2026-08-23 18:54:07] [INFO] Verifying Playwright browser installation...
+[2026-08-23 18:54:07] [INFO] Playwright browser verified successfully.
+[2026-08-23 18:54:07] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-23 18:54:07] [INFO] Check interval: 60 seconds.
+[2026-08-23 18:54:26] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7ffb20282910>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-23 18:54:26] [INFO] Retrying in 2.32 seconds...
+[2026-08-23 18:54:44] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7ffb20283ed0>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-23 18:54:44] [INFO] Retrying in 4.18 seconds...
+[2026-08-23 18:55:03] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7ffb20288190>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-08-23 18:55:03] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-23 18:55:03] [INFO] Initializing Playwright fallback scraper...
+[2026-08-23 18:55:03] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-08-23 18:55:48] [ERROR] Playwright rendering failed: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
+
+[2026-08-23 18:55:48] [INFO] Single scan run completed. Exiting.
