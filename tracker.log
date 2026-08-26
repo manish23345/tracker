@@ -15103,3 +15103,44 @@ Call log:
 [2026-08-26 05:59:49] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
 [2026-08-26 05:59:59] [INFO] Found product search results. Simulating click...
 [2026-08-26 06:00:05] [INFO] Single scan run completed. Exiting.
+[2026-08-26 06:38:35] [INFO] Verifying Playwright browser installation...
+[2026-08-26 06:38:37] [INFO] Playwright browser verified successfully.
+[2026-08-26 06:38:37] [INFO] Starting Stock Tracker with 2 products.
+[2026-08-26 06:38:37] [INFO] Check interval: 60 seconds.
+[2026-08-26 06:38:53] [WARNING] Request exception on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-26 06:38:53] [INFO] Retrying in 2.71 seconds...
+[2026-08-26 06:39:11] [WARNING] Request exception on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-26 06:39:11] [INFO] Retrying in 4.86 seconds...
+[2026-08-26 06:39:31] [WARNING] Request exception on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc: HTTPSConnectionPool(host='www.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-26 06:39:31] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-26 06:39:31] [INFO] Initializing Playwright fallback scraper...
+[2026-08-26 06:39:32] [INFO] Using Flipkart search-navigation bypass for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-08-26 06:39:42] [INFO] Found product search results. Simulating click...
+[2026-08-26 06:40:09] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-26 06:40:09] [INFO] Retrying in 2.05 seconds...
+[2026-08-26 06:40:26] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-26 06:40:26] [INFO] Retrying in 4.77 seconds...
+[2026-08-26 06:40:47] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-08-26 06:40:47] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-08-26 06:40:47] [INFO] Initializing Playwright fallback scraper...
+[2026-08-26 06:40:47] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-08-26 06:41:21] [ERROR] Playwright rendering failed: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name=\"q\"]").first
+    - locator resolved to <input name="q" value="" type="text" autocomplete="off" class="nw1UBF v1zwn25" title="Search for Products, Brands and More" placeholder="Search for Products, Brands and More"/>
+    - fill("https://dl.flipkart.com/s/X_CvXTNNNN")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+      - waiting 100ms
+    60 × waiting for element to be visible, enabled and editable
+       - element is not visible
+     - retrying fill action
+       - waiting 500ms
+
+[2026-08-26 06:41:21] [INFO] Single scan run completed. Exiting.
