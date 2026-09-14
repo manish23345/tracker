@@ -18163,3 +18163,20 @@ Call log:
   - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
 
 [2026-09-14 14:52:14] [INFO] Single scan run completed. Exiting.
+[2026-09-14 19:41:08] [INFO] Verifying Playwright browser installation...
+[2026-09-14 19:41:08] [INFO] Playwright browser verified successfully.
+[2026-09-14 19:41:08] [INFO] Starting Stock Tracker with 2 products.
+[2026-09-14 19:41:08] [INFO] Check interval: 60 seconds.
+[2026-09-14 19:41:29] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7f667b97e2d0>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-09-14 19:41:29] [INFO] Retrying in 3.00 seconds...
+[2026-09-14 19:41:47] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7f667b980b10>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-09-14 19:41:47] [INFO] Retrying in 4.58 seconds...
+[2026-09-14 19:42:06] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Max retries exceeded with url: /s/X_CvXTNNNN (Caused by ConnectTimeoutError(<HTTPSConnection(host='dl.flipkart.com', port=443) at 0x7f667b984d50>, 'Connection to dl.flipkart.com timed out. (connect timeout=15)'))
+[2026-09-14 19:42:06] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-09-14 19:42:06] [INFO] Initializing Playwright fallback scraper...
+[2026-09-14 19:42:07] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-09-14 19:42:52] [ERROR] Playwright rendering failed: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.flipkart.com/", waiting until "domcontentloaded"
+
+[2026-09-14 19:42:52] [INFO] Single scan run completed. Exiting.
