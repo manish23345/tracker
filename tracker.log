@@ -22518,3 +22518,185 @@ Call log:
 [2026-10-17 23:16:05] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
 [2026-10-17 23:16:15] [INFO] Found product search results. Simulating click...
 [2026-10-17 23:16:21] [INFO] Single scan run completed. Exiting.
+[2026-10-18 01:17:26] [INFO] Verifying Playwright browser installation...
+[2026-10-18 01:17:28] [INFO] Playwright browser verified successfully.
+[2026-10-18 01:17:28] [INFO] Starting Stock Tracker with 2 products.
+[2026-10-18 01:17:28] [INFO] Check interval: 60 seconds.
+[2026-10-18 01:17:29] [WARNING] HTTP 500 on attempt 1 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-10-18 01:17:29] [INFO] Retrying in 2.78 seconds...
+[2026-10-18 01:17:32] [WARNING] HTTP 500 on attempt 2 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-10-18 01:17:32] [INFO] Retrying in 4.51 seconds...
+[2026-10-18 01:17:38] [WARNING] HTTP 500 on attempt 3 for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-10-18 01:17:38] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-10-18 01:17:38] [INFO] Initializing Playwright fallback scraper...
+[2026-10-18 01:17:39] [INFO] Using Flipkart search-navigation bypass for URL: https://www.flipkart.com/sandisk-cruzer-blade-32-gb-utility-pendrive/p/itmd9dcaadfb31cc
+[2026-10-18 01:17:48] [INFO] Found product search results. Simulating click...
+[2026-10-18 01:18:13] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-10-18 01:18:13] [INFO] Retrying in 2.74 seconds...
+[2026-10-18 01:18:31] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-10-18 01:18:31] [INFO] Retrying in 4.07 seconds...
+[2026-10-18 01:18:51] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-10-18 01:18:51] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-10-18 01:18:51] [INFO] Initializing Playwright fallback scraper...
+[2026-10-18 01:18:51] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-10-18 01:19:00] [INFO] Found product search results. Simulating click...
+[2026-10-18 01:19:30] [WARNING] Popup navigation failed, checking current tab: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a[href*=\"/p/\"]").first
+    - locator resolved to <a class="_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9" href="/nothing-phone-4a-pro-black-128-gb/p/itm4d004931f8d69?pid=MOBHQENATV85KYCZ&marketplace=FLIPKART&lid=LSTMOBHQENATV85KYCZ0HUCMA&param=98532&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=17ZJ0AAUDDQO_AD">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div class="q7ywiQ">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+  2 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="q7ywiQ">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  7 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div class="q7ywiQ">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div class="o3whpt">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  4 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="q7ywiQ">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="o3whpt">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  4 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="o3whpt">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="q7ywiQ">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  2 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+  2 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="o3whpt">…</div> from <div tabindex="-1" class="mcO4kT RFBkxv">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div tabindex="-1" class="mcO4kT RFBkxv">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+[2026-10-18 01:19:30] [INFO] Single scan run completed. Exiting.
