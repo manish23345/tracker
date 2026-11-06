@@ -24980,3 +24980,22 @@ Call log:
 "load" event fired
 ============================================================
 [2026-11-06 02:45:02] [INFO] Single scan run completed. Exiting.
+[2026-11-06 10:06:23] [INFO] Verifying Playwright browser installation...
+[2026-11-06 10:06:24] [INFO] Playwright browser verified successfully.
+[2026-11-06 10:06:24] [INFO] Starting Stock Tracker with 2 products.
+[2026-11-06 10:06:24] [INFO] Check interval: 60 seconds.
+[2026-11-06 10:06:44] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-06 10:06:44] [INFO] Retrying in 2.11 seconds...
+[2026-11-06 10:07:02] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-06 10:07:02] [INFO] Retrying in 4.79 seconds...
+[2026-11-06 10:07:22] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-06 10:07:22] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-11-06 10:07:22] [INFO] Initializing Playwright fallback scraper...
+[2026-11-06 10:07:23] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-11-06 10:07:32] [INFO] Found product search results. Simulating click...
+[2026-11-06 10:08:03] [WARNING] Popup navigation failed, checking current tab: Timeout 30000ms exceeded.
+=========================== logs ===========================
+"domcontentloaded" event fired
+"load" event fired
+============================================================
+[2026-11-06 10:08:03] [INFO] Single scan run completed. Exiting.
