@@ -25094,3 +25094,35 @@ Call log:
 "load" event fired
 ============================================================
 [2026-11-07 15:50:19] [INFO] Single scan run completed. Exiting.
+[2026-11-07 19:44:05] [INFO] Verifying Playwright browser installation...
+[2026-11-07 19:44:06] [INFO] Playwright browser verified successfully.
+[2026-11-07 19:44:06] [INFO] Starting Stock Tracker with 2 products.
+[2026-11-07 19:44:06] [INFO] Check interval: 60 seconds.
+[2026-11-07 19:44:26] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-07 19:44:26] [INFO] Retrying in 2.17 seconds...
+[2026-11-07 19:44:44] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-07 19:44:44] [INFO] Retrying in 4.62 seconds...
+[2026-11-07 19:45:04] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-07 19:45:04] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-11-07 19:45:04] [INFO] Initializing Playwright fallback scraper...
+[2026-11-07 19:45:04] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-11-07 19:45:38] [ERROR] Playwright rendering failed: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[name=\"q\"]").first
+    - locator resolved to <input name="q" value="" type="text" autocomplete="off" class="nw1UBF v1zwn26" title="Search for Products, Brands and More" placeholder="Search for Products, Brands and More"/>
+    - fill("https://dl.flipkart.com/s/X_CvXTNNNN")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+      - waiting 100ms
+    60 × waiting for element to be visible, enabled and editable
+       - element is not visible
+     - retrying fill action
+       - waiting 500ms
+
+[2026-11-07 19:45:38] [INFO] Single scan run completed. Exiting.
