@@ -26208,3 +26208,23 @@ Call log:
   "load" event fired
 ============================================================
 [2026-11-23 02:57:36] [INFO] Single scan run completed. Exiting.
+[2026-11-23 11:31:31] [INFO] Verifying Playwright browser installation...
+[2026-11-23 11:31:33] [INFO] Playwright browser verified successfully.
+[2026-11-23 11:31:33] [INFO] Starting Stock Tracker with 2 products.
+[2026-11-23 11:31:33] [INFO] Check interval: 60 seconds.
+[2026-11-23 11:31:35] [ERROR] Error checking Telegram bot commands: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[2026-11-23 11:31:53] [WARNING] Request exception on attempt 1 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-23 11:31:53] [INFO] Retrying in 2.24 seconds...
+[2026-11-23 11:32:11] [WARNING] Request exception on attempt 2 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-23 11:32:11] [INFO] Retrying in 4.07 seconds...
+[2026-11-23 11:32:30] [WARNING] Request exception on attempt 3 for URL: https://dl.flipkart.com/s/X_CvXTNNNN: HTTPSConnectionPool(host='dl.flipkart.com', port=443): Read timed out. (read timeout=15)
+[2026-11-23 11:32:30] [WARNING] Requests blocked or failed. Falling back to Playwright headless browser...
+[2026-11-23 11:32:30] [INFO] Initializing Playwright fallback scraper...
+[2026-11-23 11:32:31] [INFO] Using Flipkart search-navigation bypass for URL: https://dl.flipkart.com/s/X_CvXTNNNN
+[2026-11-23 11:32:41] [INFO] Found product search results. Simulating click...
+[2026-11-23 11:33:12] [WARNING] Popup navigation failed, checking current tab: Page.wait_for_load_state: Timeout 30000ms exceeded.
+=========================== logs ===========================
+  "domcontentloaded" event fired
+  "load" event fired
+============================================================
+[2026-11-23 11:33:12] [INFO] Single scan run completed. Exiting.
